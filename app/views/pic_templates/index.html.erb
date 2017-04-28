@@ -1,0 +1,13 @@
+<h1>All Photos</h1>
+
+<a>Add a new photo</a>
+
+<% @list_of_photos.each do |a_photo| %>
+
+<img src="<%=a_photo.source%>">
+
+<a>Show details</a>
+<a>Edit</a>
+<a>Delete</a>
+
+<% end %>

@@ -1,0 +1,15 @@
+<h1>Photo Details</h1>
+
+<p>
+  <%= @my_photo.caption %>
+</p>
+
+<img src= "<%= @my_photo.source %>">
+
+<p>
+  <%= time_ago_in_words(@my_photo.created_at)%> ago
+</P>
+
+<a class="btn btn-secondary">Go back</a>
+<a class="btn btn-secondary">Edit</a>
+<a class="btn btn-secondary">Delete</a>
