@@ -4,6 +4,11 @@ class PicturesController < ApplicationController
   end
 
   def create_row
+    @new_photo=Photo.new
+    @new_photo.source=params["the_source"]
+    @new_photo.caption=params["the_caption"]
+    @new_photo.save
+    @photo_count=Photo.count
     render("pic_templates/create_row.html.erb")
   end
 
