@@ -1,4 +1,11 @@
 class PicturesController < ApplicationController
+
+def home
+@list_of_photos = Photo.order({:created_at => :desc})
+render("pic_templates/index.html.erb")
+end
+
+
   def new_form
     render("pic_templates/new_form.html.erb")
   end
@@ -9,7 +16,7 @@ class PicturesController < ApplicationController
     @new_photo.caption=params["the_caption"]
     @new_photo.save
     @photo_count=Photo.count
-    render("pic_templates/create_row.html.erb")
+    redirect_to("/photos")
   end
 
 def show

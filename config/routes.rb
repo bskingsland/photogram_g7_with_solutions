@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  # HOME
+get("/", { :controller => "pictures", :action => "home"})
+
   # CREATE
 get("/photos/new", { :controller => "pictures", :action => "new_form" })
 get("/create_photo", { :controller => "pictures", :action => "create_row" })
