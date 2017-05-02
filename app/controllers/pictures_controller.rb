@@ -18,10 +18,13 @@ def show
 end
 
 def destroy_row
-  render("pic_templates/destroy_row.html.erb")
+  my_photo = Photo.find(params["da_id"])
+  my_photo.destroy
+  redirect_to("/photos")
 end
 
 def edit_form
+  @my_photo = Photo.find(params["la_id"])
   render("pic_templates/edit_form.html.erb")
 end
 
@@ -31,7 +34,11 @@ def index
 end
 
 def update_row
-  render("pic_templates/update_row.html.erb")
+  @photo=Photo.find(params["le_id"])
+  @photo.source=params["the_source"]
+  @photo.caption=params["the_caption"]
+  @photo.save
+  redirect_to("/photos/#{@photo.id}")
 end
 
 end
