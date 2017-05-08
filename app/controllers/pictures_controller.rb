@@ -1,11 +1,5 @@
 class PicturesController < ApplicationController
 
-def home
-@list_of_photos = Photo.order({:created_at => :desc})
-render("pic_templates/index.html.erb")
-end
-
-
   def new_form
     render("pic_templates/new_form.html.erb")
   end
